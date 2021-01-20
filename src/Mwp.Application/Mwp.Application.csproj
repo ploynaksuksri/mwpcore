@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>Mwp</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mwp.Domain\Mwp.Domain.csproj" />
+		<ProjectReference Include="..\Mwp.Application.Contracts\Mwp.Application.Contracts.csproj" />
+		<ProjectReference Include="..\Mwp.ExcelIntegration\Mwp.ExcelIntegration.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Saas.Host.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.AuditLogging.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.Identity.Pro.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.IdentityServer.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.Account.Pro.Public.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.Account.Pro.Admin.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.LanguageManagement.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.TextTemplateManagement.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Abp.LeptonTheme.Management.Application" Version="3.3.0" />
+		<PackageReference Include="Volo.Chat.Application" Version="3.3.0" />
+	</ItemGroup>
+</Project>

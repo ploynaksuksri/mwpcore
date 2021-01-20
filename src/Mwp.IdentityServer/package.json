@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "name": "my-app-identityserver",
+  "private": true,
+  "dependencies": {
+    "@volo/abp.aspnetcore.mvc.ui.theme.lepton": "^3.3.0",
+    "@volo/account": "^3.3.0"
+  }
+}

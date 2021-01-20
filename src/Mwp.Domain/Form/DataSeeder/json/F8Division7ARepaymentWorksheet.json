@@ -1,0 +1,1438 @@
+{
+  "components": [
+    {
+      "label": "HTMLFunc",
+      "tag": "script",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "function f8FuncCalculateMinRepayTotal(openingBalance, rateInPct, yearsUntilLoanTerminates) {\r\n\tvar rate = rateInPct / 100;\r\n\tvar total = (openingBalance * rate) / (1 - (1 / Math.pow(1 + rate, yearsUntilLoanTerminates)));\r\n\treturn Math.round(total * 100) / 100;\r\n}\r\n\r\nfunction f8FuncCalculateMinRepayInterest(openingBalance, rateInPct) {\r\n\tvar rate = rateInPct / 100;\r\n\tvar interestAmount = rate * openingBalance;\r\n\treturn Math.round(interestAmount * 100) / 100;\r\n}\r\n\r\nfunction f8FuncCalculateMinRepayPrincipal(openingBalance, rateInPct, yearsUntilLoanTerminates) {\r\n\tvar total = f8FuncCalculateMinRepayTotal(openingBalance, rateInPct, yearsUntilLoanTerminates);\r\n\tvar interestAmount = f8FuncCalculateMinRepayInterest(openingBalance, rateInPct);\r\n\treturn total - interestAmount;\r\n}\r\n\r\nfunction f8FuncCalculateLoanClosingBalance(openingBalance, rateInPct, repayAmount){\r\n\tvar interestAmount = f8FuncCalculateMinRepayInterest(openingBalance, rateInPct);\r\n\treturn openingBalance + interestAmount - repayAmount;\r\n}\r\n\r\nfunction f8FuncIsMinRepayMade(openingBalance, rateInPct, yearsUntilLoanTerminates, repayAmount){\r\n\tvar total = f8FuncCalculateMinRepayTotal(openingBalance, rateInPct, yearsUntilLoanTerminates);\r\n\tif(total > repayAmount){\r\n\t\treturn 'NO';\r\n\t} else {\r\n\t\treturn 'YES';\r\n\t}\r\n}",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "Loan to",
+      "allowMultipleMasks": false,
+      "showWordCount": false,
+      "showCharCount": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "textfield",
+      "input": true,
+      "key": "loanTo",
+      "defaultValue": "",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "widget": {
+        "type": ""
+      },
+      "reorder": false,
+      "inputFormat": "plain",
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "Position",
+      "allowMultipleMasks": false,
+      "showWordCount": false,
+      "showCharCount": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "textfield",
+      "input": true,
+      "key": "position",
+      "defaultValue": "",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "widget": {
+        "type": ""
+      },
+      "reorder": false,
+      "inputFormat": "plain",
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "Current Year",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "currentYear",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "defaultValue": 2018,
+      "reorder": false
+    },
+    {
+      "label": "Benchmark Interest Rate(%)",
+      "mask": false,
+      "disabled": true,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "benchmarkInterestRate",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "properties": {},
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "calculateValue": "var rate = data.division7ABenchmarkRates.filter(function(x){\n  return x.yearEnding === data.currentYear;\n}).pop();\nif(rate){\n  value = rate.ratePercent;\n} else {\n  value = 0;\n}",
+      "refreshOn": "currentYear",
+      "reorder": false
+    },
+    {
+      "label": "Repayments",
+      "hideLabel": true,
+      "disableAddingRemovingRows": true,
+      "defaultOpen": false,
+      "layoutFixed": false,
+      "enableRowGroups": false,
+      "customClass": "table-sm",
+      "reorder": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "datagrid",
+      "input": true,
+      "key": "repayments",
+      "defaultValue": [
+        {
+          "yearsUntilLoanTerminates": 1,
+          "yearLoanWasDrawn": 2011
+        },
+        {
+          "yearsUntilLoanTerminates": 2,
+          "yearLoanWasDrawn": 2012
+        },
+        {
+          "yearsUntilLoanTerminates": 3,
+          "yearLoanWasDrawn": 2013
+        },
+        {
+          "yearsUntilLoanTerminates": 4,
+          "yearLoanWasDrawn": 2014
+        },
+        {
+          "yearsUntilLoanTerminates": 5,
+          "yearLoanWasDrawn": 2015
+        },
+        {
+          "yearsUntilLoanTerminates": 6,
+          "yearLoanWasDrawn": 2016
+        },
+        {
+          "yearsUntilLoanTerminates": 7,
+          "yearLoanWasDrawn": 2017
+        },
+        {
+          "yearsUntilLoanTerminates": 0,
+          "yearLoanWasDrawn": 2018
+        }
+      ],
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "components": [
+        {
+          "label": "Year Loan Was Drawn",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "yearLoanWasDrawn",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": false,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-0",
+          "calculateValue": "if(row.yearsUntilLoanTerminates === 0){\n  value = data.currentYear;\n}else{\n  value = data.currentYear - data.repayments.length + row.yearsUntilLoanTerminates;\n}",
+          "refreshOn": "data",
+          "reorder": false
+        },
+        {
+          "label": "Years Until Loan Terminates",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "yearsUntilLoanTerminates",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": false,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-1",
+          "reorder": false
+        },
+        {
+          "label": "Loan Opening Balance",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "loanOpeningBalance",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-2",
+          "decimalLimit": 2,
+          "reorder": false
+        },
+        {
+          "label": "Principal",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "minPrincipal",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-3",
+          "decimalLimit": 2,
+          "calculateValue": "value = f8FuncCalculateMinRepayPrincipal(\n  row.loanOpeningBalance,\n  data.benchmarkInterestRate,\n  row.yearsUntilLoanTerminates);",
+          "refreshOn": "data",
+          "reorder": false
+        },
+        {
+          "label": "Interest",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "minInterest",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-4",
+          "decimalLimit": 2,
+          "calculateValue": "value = f8FuncCalculateMinRepayInterest(\n  row.loanOpeningBalance,\n  data.benchmarkInterestRate);",
+          "reorder": false
+        },
+        {
+          "label": "Total Min Payment",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "total",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-5",
+          "decimalLimit": 2,
+          "calculateValue": "value = f8FuncCalculateMinRepayTotal(\n  row.loanOpeningBalance,\n  data.benchmarkInterestRate,\n  row.yearsUntilLoanTerminates);",
+          "refreshOn": "data",
+          "reorder": false
+        },
+        {
+          "label": "Repayments Made",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "repaymentsMade",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-6",
+          "decimalLimit": 2,
+          "reorder": false
+        },
+        {
+          "label": "Loan Closing Balance",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "loanClosingBalance",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-7",
+          "decimalLimit": 2,
+          "calculateValue": "value = f8FuncCalculateLoanClosingBalance(\n  row.loanOpeningBalance,\n  data.benchmarkInterestRate,\n  row.repaymentsMade);",
+          "reorder": false
+        },
+        {
+          "label": "Minimum Repayment Made",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "textfield",
+          "input": true,
+          "key": "minimumRepaymentMade",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-8",
+          "calculateValue": "value = f8FuncIsMinRepayMade(\n  row.loanOpeningBalance,\n  data.benchmarkInterestRate,\n  row.yearsUntilLoanTerminates,\n  row.repaymentsMade);",
+          "widget": {
+            "type": ""
+          },
+          "reorder": false
+        }
+      ],
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "addAnother": "",
+      "groupToggle": false
+    },
+    {
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "numRows": 1,
+      "numCols": 6,
+      "type": "table",
+      "input": false,
+      "key": "table2",
+      "label": "",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "rows": [
+        [
+          {
+            "components": [
+              {
+                "label": "Total Loan Opening Balance",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "totalLoanOpeningBalance",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "decimalLimit": 2,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "calculateValue": "value = _.sumBy(data.repayments,function(x){\n  return x.loanOpeningBalance;\n});",
+                "refreshOn": "data",
+                "defaultValue": 0,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Total Principal",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "totalPrincipal",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "decimalLimit": 2,
+                "calculateValue": "value = _.sumBy(data.repayments,function(x){\n  return x.minPrincipal;\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Total Interest",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "totalInterest",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "decimalLimit": 2,
+                "calculateValue": "value = _.sumBy(data.repayments,function(x){\n  return x.minInterest;\n});",
+                "refreshOn": "data",
+                "defaultValue": 0,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Total Min Repayment",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "totalMinRepayment",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "decimalLimit": 2,
+                "calculateValue": "value = _.sumBy(data.repayments,function(x){\r\n  return x.total;\r\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Total Repayments Made",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "totalRepaymentsMade",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "decimalLimit": 2,
+                "calculateValue": "value = _.sumBy(data.repayments,function(x){\r\n  return x.repaymentsMade;\r\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Total Loan Closing Balance",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "totalLoanClosingBalance",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "decimalLimit": 2,
+                "calculateValue": "value = _.sumBy(data.repayments,function(x){\r\n  return x.loanClosingBalance;\r\n});",
+                "refreshOn": "data",
+                "defaultValue": 0,
+                "reorder": false
+              }
+            ]
+          }
+        ]
+      ],
+      "header": [],
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "Columns",
+      "columns": [
+        {
+          "components": [
+            {
+              "label": "Loan Balance per Financials",
+              "mask": false,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "number",
+              "input": true,
+              "key": "loanBalancePerFinancials",
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "delimiter": true,
+              "requireDecimal": false,
+              "encrypted": false,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "decimalLimit": 2,
+              "reorder": false
+            }
+          ],
+          "width": 4,
+          "offset": 0,
+          "push": 0,
+          "pull": 0,
+          "type": "column",
+          "input": false,
+          "hideOnChildrenHidden": false,
+          "key": "column",
+          "tableView": true,
+          "label": "Column"
+        },
+        {
+          "components": [
+            {
+              "label": "Loan Balance Check",
+              "allowMultipleMasks": false,
+              "showWordCount": false,
+              "showCharCount": false,
+              "disabled": true,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "textfield",
+              "input": true,
+              "key": "loanBalanceCheck",
+              "defaultValue": "CORRECT",
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "inputFormat": "plain",
+              "encrypted": false,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "calculateValue": "if(data.loanBalancePerFinancials === data.totalLoanClosingBalance){\r\n\tvalue = 'CORRECT';\r\n} else{\r\n\tvalue = 'INCORRECT';\r\n}",
+              "refreshOn": "data",
+              "widget": {
+                "type": ""
+              },
+              "reorder": false
+            }
+          ],
+          "width": 4,
+          "offset": 0,
+          "push": 0,
+          "pull": 0,
+          "type": "column",
+          "input": false,
+          "hideOnChildrenHidden": false,
+          "key": "column",
+          "tableView": true,
+          "label": "Column"
+        }
+      ],
+      "mask": false,
+      "tableView": false,
+      "alwaysEnabled": false,
+      "type": "columns",
+      "input": false,
+      "key": "columns3",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "reorder": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "Columns",
+      "columns": [
+        {
+          "components": [
+            {
+              "label": "Current Year Loan Drawn",
+              "disableAddingRemovingRows": true,
+              "defaultOpen": false,
+              "layoutFixed": false,
+              "enableRowGroups": false,
+              "customClass": "table-sm",
+              "reorder": false,
+              "mask": false,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "datagrid",
+              "input": true,
+              "key": "currentYearLoanDrawn",
+              "defaultValue": [
+                {
+                  "description": "    Client Drawings per General Ledger "
+                },
+                {
+                  "description": "    Debit adjustments to Loan Account "
+                },
+                {
+                  "description": "    Other debit adjustments "
+                },
+                {
+                  "description": " Less:  "
+                },
+                {
+                  "description": "    Funds Contributed per GL (not used as min. repayment) "
+                },
+                {
+                  "description": "    Credit adjustments to Loan Account "
+                },
+                {
+                  "description": "    Dividends declared and applied to current year loan * "
+                },
+                {
+                  "description": "    Other credit adjustments "
+                }
+              ],
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "components": [
+                {
+                  "label": "Description",
+                  "allowMultipleMasks": false,
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "disabled": true,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "description",
+                  "defaultValue": "",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "inputFormat": "plain",
+                  "encrypted": false,
+                  "properties": {},
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-0",
+                  "widget": {
+                    "type": ""
+                  },
+                  "reorder": false
+                },
+                {
+                  "label": "Amount",
+                  "mask": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "number",
+                  "input": true,
+                  "key": "amount",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "delimiter": true,
+                  "requireDecimal": false,
+                  "encrypted": false,
+                  "decimalLimit": 2,
+                  "properties": {},
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-1",
+                  "reorder": false
+                }
+              ],
+              "encrypted": false,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "addAnother": "",
+              "groupToggle": false
+            },
+            {
+              "label": "Total Current Year Loan",
+              "mask": false,
+              "disabled": true,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "number",
+              "input": true,
+              "key": "totalCurrentYearLoan",
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "delimiter": true,
+              "requireDecimal": false,
+              "encrypted": false,
+              "decimalLimit": 2,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "calculateValue": "value = _.sumBy(data.currentYearLoanDrawn,function(x){\n  if(data.currentYearLoanDrawn.indexOf(x)===3){\n    return 0;\n  }\n  return x.amount;\n});",
+              "refreshOn": "data",
+              "defaultValue": 0,
+              "reorder": false
+            }
+          ],
+          "width": 4,
+          "offset": 0,
+          "push": 0,
+          "pull": 0,
+          "type": "column",
+          "input": false,
+          "hideOnChildrenHidden": false,
+          "key": "column",
+          "tableView": true,
+          "label": "Column"
+        },
+        {
+          "components": [
+            {
+              "label": "Distributable Surplus",
+              "disableAddingRemovingRows": true,
+              "defaultOpen": false,
+              "layoutFixed": false,
+              "enableRowGroups": false,
+              "customClass": "table-sm",
+              "reorder": false,
+              "mask": false,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "datagrid",
+              "input": true,
+              "key": "distributableSurplus",
+              "defaultValue": [
+                {
+                  "description2": "   Net assets"
+                },
+                {
+                  "description2": "   Divison 7A amounts"
+                },
+                {
+                  "description2": "Less:"
+                },
+                {
+                  "description2": "   Non-commerical Loans"
+                },
+                {
+                  "description2": "   Paid-up share value"
+                },
+                {
+                  "description2": "   Repayments of non-commercial loans"
+                }
+              ],
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "components": [
+                {
+                  "label": "Description",
+                  "allowMultipleMasks": false,
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "disabled": true,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "description2",
+                  "defaultValue": "",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "inputFormat": "plain",
+                  "encrypted": false,
+                  "properties": {},
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-0",
+                  "widget": {
+                    "type": ""
+                  },
+                  "reorder": false
+                },
+                {
+                  "label": "Amount",
+                  "mask": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "number",
+                  "input": true,
+                  "key": "amount",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "delimiter": true,
+                  "requireDecimal": false,
+                  "encrypted": false,
+                  "decimalLimit": 2,
+                  "reorder": false,
+                  "properties": {},
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-1"
+                }
+              ],
+              "encrypted": false,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "addAnother": "",
+              "groupToggle": false
+            },
+            {
+              "label": "Total Distributable Surplus",
+              "mask": false,
+              "disabled": true,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "number",
+              "input": true,
+              "key": "totalDistributableSurplus",
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "delimiter": true,
+              "requireDecimal": false,
+              "encrypted": false,
+              "decimalLimit": 2,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "calculateValue": "value = _.sumBy(data.distributableSurplus,function(x){\n  if(data.distributableSurplus.indexOf(x)===2){\n    return 0;\n  }\n  return x.amount;\n});",
+              "refreshOn": "data",
+              "defaultValue": 0,
+              "reorder": false
+            }
+          ],
+          "width": 4,
+          "offset": 0,
+          "push": 0,
+          "pull": 0,
+          "type": "column",
+          "input": false,
+          "hideOnChildrenHidden": false,
+          "key": "column",
+          "tableView": true,
+          "label": "Column"
+        },
+        {
+          "width": 4,
+          "offset": 0,
+          "push": 0,
+          "pull": 0,
+          "type": "column",
+          "input": false,
+          "hideOnChildrenHidden": false,
+          "key": "column",
+          "tableView": true,
+          "label": "Column",
+          "components": [
+            {
+              "label": "Division 7A Benchmark Rates",
+              "disableAddingRemovingRows": true,
+              "defaultOpen": false,
+              "layoutFixed": false,
+              "enableRowGroups": false,
+              "customClass": "table-sm",
+              "reorder": false,
+              "mask": false,
+              "tableView": true,
+              "alwaysEnabled": false,
+              "type": "datagrid",
+              "input": true,
+              "key": "division7ABenchmarkRates",
+              "defaultValue": [
+                {
+                  "reference": "TD 2018/14",
+                  "yearEnding": 2019,
+                  "ratePercent": 5.2
+                },
+                {
+                  "reference": "TD 2017/17",
+                  "yearEnding": 2018,
+                  "ratePercent": 5.3
+                },
+                {
+                  "reference": "TD 2016/11",
+                  "yearEnding": 2017,
+                  "ratePercent": 5.4
+                },
+                {
+                  "reference": "TD 2015/15",
+                  "yearEnding": 2016,
+                  "ratePercent": 5.45
+                },
+                {
+                  "reference": "TD 2014/20",
+                  "yearEnding": 2015,
+                  "ratePercent": 5.95
+                },
+                {
+                  "reference": "TD 2013/17",
+                  "yearEnding": 2014,
+                  "ratePercent": 6.2
+                },
+                {
+                  "reference": "TD 2012/15",
+                  "yearEnding": 2013,
+                  "ratePercent": 7.05
+                },
+                {
+                  "reference": "TD 2011/20",
+                  "yearEnding": 2012,
+                  "ratePercent": 7.8
+                },
+                {
+                  "reference": "TD 2010/18",
+                  "yearEnding": 2011,
+                  "ratePercent": 7.4
+                },
+                {
+                  "reference": "TD 2009/16",
+                  "yearEnding": 2010,
+                  "ratePercent": 5.75
+                },
+                {
+                  "reference": "TD 2008/19",
+                  "yearEnding": 2009,
+                  "ratePercent": 9.45
+                },
+                {
+                  "reference": "TD 2007/23",
+                  "yearEnding": 2008,
+                  "ratePercent": 8.05
+                },
+                {
+                  "reference": "TD 2006/45",
+                  "yearEnding": 2007,
+                  "ratePercent": 7.55
+                },
+                {
+                  "reference": "TD 2005/31",
+                  "yearEnding": 2006,
+                  "ratePercent": 7.3
+                },
+                {
+                  "reference": "TD 2004/28",
+                  "yearEnding": 2005,
+                  "ratePercent": 7.05
+                },
+                {
+                  "reference": "TD 2003/19",
+                  "yearEnding": 2004,
+                  "ratePercent": 6.55
+                },
+                {
+                  "reference": "TD 2002/15",
+                  "yearEnding": 2003,
+                  "ratePercent": 6.3
+                },
+                {
+                  "reference": "TD 2001/20",
+                  "yearEnding": 2002,
+                  "ratePercent": 6.8
+                },
+                {
+                  "reference": "TD 2001/1",
+                  "yearEnding": 2001,
+                  "ratePercent": 7.8
+                },
+                {
+                  "reference": "TD 1999/39",
+                  "yearEnding": 2000,
+                  "ratePercent": 6.5
+                }
+              ],
+              "validate": {
+                "customMessage": "",
+                "json": ""
+              },
+              "conditional": {
+                "show": "",
+                "when": "",
+                "json": ""
+              },
+              "components": [
+                {
+                  "label": "Year Ending",
+                  "mask": false,
+                  "disabled": true,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "number",
+                  "input": true,
+                  "key": "yearEnding",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "encrypted": false,
+                  "properties": {},
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-0",
+                  "reorder": false
+                },
+                {
+                  "label": "%",
+                  "mask": false,
+                  "disabled": true,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "number",
+                  "input": true,
+                  "key": "ratePercent",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "properties": {},
+                  "tags": [],
+                  "delimiter": false,
+                  "requireDecimal": false,
+                  "encrypted": false,
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-1",
+                  "reorder": false
+                },
+                {
+                  "label": "Reference",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "disabled": true,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "textfield",
+                  "allowMultipleMasks": false,
+                  "input": true,
+                  "key": "reference",
+                  "defaultValue": "",
+                  "validate": {
+                    "customMessage": "",
+                    "json": ""
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": "",
+                    "json": ""
+                  },
+                  "inputFormat": "plain",
+                  "encrypted": false,
+                  "properties": {},
+                  "customConditional": "",
+                  "logic": [],
+                  "attributes": {},
+                  "row": "0-2",
+                  "widget": {
+                    "type": ""
+                  },
+                  "reorder": false
+                }
+              ],
+              "encrypted": false,
+              "properties": {},
+              "customConditional": "",
+              "logic": [],
+              "attributes": {},
+              "addAnother": "",
+              "groupToggle": false
+            }
+          ]
+        }
+      ],
+      "mask": false,
+      "tableView": false,
+      "alwaysEnabled": false,
+      "type": "columns",
+      "input": false,
+      "key": "columns2",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "_id": "5de891fc0a91d4a018e01782",
+  "type": "form",
+  "display": "form",
+  "title": "F8 Division 7A Repayment Worksheet",
+  "name": "F8 Division 7A Repayment Worksheet",
+  "path": "F8 Division 7A Repayment Worksheet"
+}

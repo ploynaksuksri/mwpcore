@@ -1,0 +1,970 @@
+﻿{
+  "_id": "5ddd53a1e1e0d554c0adac15",
+  "components": [
+    {
+      "label": "HTML",
+      "tag": "div",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "<table class=\"table table-bordered \">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th colspan=\"2\">&nbsp;</th>\r\n\t\t\t<th>\r\n\t\t\t\t<b>Small Company</b>\r\n\t\t\t</th>\r\n\t\t\t<th>\r\n\t\t\t\t<b>Medium-sized Company</b>\r\n\t\t\t</th>\r\n\t\t\t<th>\r\n\t\t\t\t<b>Small Group</b>\r\n\t\t\t</th>\r\n\t\t\t<th>\r\n\t\t\t\t<b>Medium-sized Group</b>\r\n\t\t\t</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Turnover</td>\r\n\t\t\t<td>&le;</td>\r\n\t\t\t<td>$ 10,200,000</td>\r\n\t\t\t<td>$ 36,200,000</td>\r\n\t\t\t<td>$ 12,200,000</td>\r\n\t\t\t<td>$ 43,200,000</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Balance Sheet total</td>\r\n\t\t\t<td>&le;</td>\r\n\t\t\t<td>$ 5,100,000</td>\r\n\t\t\t<td>$ 18,000,000</td>\r\n\t\t\t<td>$ 6,100,000</td>\r\n\t\t\t<td>$ 21,600,000</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Average number of employees</td>\r\n\t\t\t<td>&le;</td>\r\n\t\t\t<td>50</td>\r\n\t\t\t<td>250</td>\r\n\t\t\t<td>50 </td>\r\n\t\t\t<td>250</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "HTML",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "* These figures are gross (ie, before deducting inter company).\r\n\t\t\t\tThe net figures are the same as for small and medium sized companies. A holding company needs to satisfy either the gross or net item.",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html13",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "reorder": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "HTML",
+      "tag": "h3",
+      "className": "alert-dark m-0 p-3",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "Actual Figures",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html2",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "reorder": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "customClass": "table-bordered",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "numRows": 4,
+      "numCols": 4,
+      "type": "table",
+      "input": false,
+      "key": "table2",
+      "label": "",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "rows": [
+        [
+          {
+            "components": []
+          },
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "2019",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html6",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "2020",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html7",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "2021",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html8",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "Turnover",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html3",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number2",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number3",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "Balance Sheet total (gross assets)",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html4",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number4",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number5",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number6",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "Employees",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html5",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number7",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number8",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Number",
+                "hideLabel": true,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "number9",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          }
+        ]
+      ],
+      "header": [],
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "HTML",
+      "tag": "h3",
+      "className": "alert-dark m-0 p-3",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "Conclusions",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html9",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "HTML",
+      "tag": "b",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "Based on the above:",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html10",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "reorder": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "numCols": 2,
+      "type": "table",
+      "input": false,
+      "key": "table3",
+      "label": "",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "rows": [
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "The group size treatment eligibility in current year is",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html11",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Radio",
+                "hideLabel": true,
+                "optionsLabelPosition": "right",
+                "values": [
+                  {
+                    "label": "N/A",
+                    "value": "nA",
+                    "shortcut": ""
+                  },
+                  {
+                    "label": "Small",
+                    "value": "small",
+                    "shortcut": ""
+                  },
+                  {
+                    "label": "Medium",
+                    "value": "medium",
+                    "shortcut": ""
+                  },
+                  {
+                    "label": "Large",
+                    "value": "large",
+                    "shortcut": ""
+                  }
+                ],
+                "inline": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "radio",
+                "input": true,
+                "key": "radio",
+                "defaultValue": "",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "reorder": false
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "The company size treatment eligibility in current year",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html12",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Radio",
+                "hideLabel": true,
+                "optionsLabelPosition": "right",
+                "values": [
+                  {
+                    "label": "Small",
+                    "value": "small",
+                    "shortcut": ""
+                  },
+                  {
+                    "label": "Medium",
+                    "value": "medium",
+                    "shortcut": ""
+                  },
+                  {
+                    "label": "Large",
+                    "value": "large",
+                    "shortcut": ""
+                  }
+                ],
+                "inline": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "radio",
+                "input": true,
+                "key": "radio2",
+                "defaultValue": "",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "reorder": false
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "components": [
+              {
+                "label": "The checklist(s) to be completed are indicated on A32.",
+                "shortcut": "",
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "checkbox",
+                "input": true,
+                "key": "theChecklistSToBeCompletedAreIndicatedOnA32",
+                "defaultValue": false,
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": []
+          }
+        ]
+      ],
+      "header": [],
+      "reorder": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "type": "form",
+  "display": "form",
+  "title": "Accounts Disclosure Checklist Summary​",
+  "name": "Accounts Disclosure Checklist Summary​",
+  "path": "Accounts Disclosure Checklist Summary​"
+}

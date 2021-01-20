@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>Mwp</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mwp.Domain\Mwp.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Azure.Management.Fluent" Version="1.34.0" />
+		<PackageReference Include="Microsoft.Azure.Management.ResourceManager.Fluent" Version="1.34.0" />
+		<PackageReference Include="Microsoft.Azure.Management.Sql.Fluent" Version="1.34.0" />
+		<PackageReference Include="Microsoft.Azure.Management.Storage.Fluent" Version="1.34.0" />
+	</ItemGroup>
+</Project>

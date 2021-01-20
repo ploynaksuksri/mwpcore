@@ -1,0 +1,14 @@
+{
+  "data": {
+    "textField": "AAA",
+    "container": {
+      "textField": "bbb",
+      "container1": {
+        "checkbox": false
+      },
+      "textField1": "DDD"
+    },
+    "submit": false
+  },
+  "metadata": {}
+}

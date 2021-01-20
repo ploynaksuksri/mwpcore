@@ -1,0 +1,89 @@
+{
+  "components": [
+    {
+      "label": "HTMLFunc",
+      "tag": "script",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "type",
+          "value": "text/javascript"
+        }
+      ],
+      "content": "console.log(\"TEST1\");\r\n(function () {\r\n    var $ = window[\"jQuery\"];\r\n    var _ = window[\"lodash\"];\r\n\r\n    var _rowTemplate = \"<tr data-id=''>\" +\r\n        \"<td class='payment-number'> -</td>\" +\r\n        \"<td class='payment-date'>-</td>\" +\r\n        \"<td class='payment-amount'>-</td>\" +\r\n        \"<td class='principal'>-</td>\" +\r\n        \"<td class='interest'>-</td>\" +\r\n        \"<td class='extra-payment'>-</td>\" +\r\n        \"<td class='balance'>-</td>\" +\r\n        \"</tr>\";\r\n\r\n    var _loanTables = [];\r\n\r\n    function calculatePmt(ir, np, pv, fv) {\r\n        /*\r\n        ir - interest rate per month\r\n        np - number of periods (months)\r\n        pv - present value\r\n        fv - future value (residual value)\r\n        */\r\n        let pmt = (ir * (pv * Math.pow((ir + 1), np) + fv)) / ((ir + 1) * (Math.pow((ir + 1), np) - 1));\r\n        return pmt;\r\n    }\r\n\r\n    function addRowToDom($tbody, rowNum, item) {\r\n        var $rowDom = $(_rowTemplate);\r\n        $rowDom.attr(\"data-id\", rowNum);\r\n        $rowDom.find(\"td.payment-number\").text(rowNum);\r\n        $rowDom.find(\"td.payment-date\").text(item.paymentDate);\r\n        var paymentPerPeriodAmountText = formatCurrency(item.paymentAmount);\r\n        $rowDom.find(\"td.payment-amount\").text(paymentPerPeriodAmountText);\r\n        $rowDom.find(\"td.principal\").text(formatCurrency(item.principal));\r\n        $rowDom.find(\"td.interest\").text(formatCurrency(item.interestAmount));\r\n        $rowDom.find(\"td.balance\").text(formatCurrency(item.balanceAmount));\r\n        $tbody.append($rowDom);\r\n    }\r\n\r\n    function removeAllRowsFromTable() {\r\n        $(\".formio-component-paymentTable\").find(\"table tr[data-id]\").remove();\r\n    }\r\n\r\n    function getStartDate() {\r\n        return moment(\"2020-01-01\");\r\n    }\r\n\r\n    function getLoanAmount() {\r\n        return 10000;\r\n    }\r\n\r\n    function getLoanPeriodInYears() {\r\n        return 20;\r\n    }\r\n\r\n    function getNumberOfPaymentsPerYear() {\r\n        return 12;\r\n    }\r\n\r\n    function getAnnualInterestRate() {\r\n        return 7.5;\r\n    }\r\n\r\n    function formatCurrency(val) {\r\n        if (!val && val !== 0) {\r\n            return \"\";\r\n        }\r\n        return val.toLocaleString(undefined, { minimumFractionDigits: 2 });\r\n    }\r\n\r\n    function addStartRow($tbody) {\r\n        var $rowDom = $(_rowTemplate);\r\n        $rowDom.attr(\"data-id\", 0);\r\n        $rowDom.find(\"td.payment-number\").text(\"\");\r\n        $rowDom.find(\"td.payment-date\").text(getStartDate().format(\"DD-MMM-YYYY\"));\r\n        var loanAmount = getLoanAmount();\r\n        var loanAmountText = formatCurrency(loanAmount);\r\n        $rowDom.find(\"td.balance\").text(loanAmountText);\r\n        $tbody.append($rowDom);\r\n    }\r\n\r\n    function getPaymentPerPeriodAmount(\r\n        loanAmount,\r\n        loanInterestRate,\r\n        numberOfPaymentPerYear,\r\n        loanPeriodInYears) {\r\n        var amount = calculatePmt(\r\n            loanInterestRate / 100 / numberOfPaymentPerYear,\r\n            numberOfPaymentPerYear * loanPeriodInYears,\r\n            loanAmount,\r\n            0);\r\n        if (_.isNaN(amount)) {\r\n            return 0;\r\n        }\r\n        return Math.round(amount * 100) / 100;\r\n    }\r\n\r\n    function getPaymentDate(\r\n        mmStartDate,\r\n        rowNum,\r\n        paymentPerYr){\r\n        if (!mmStartDate || !rowNum || !paymentPerYr) {\r\n            return \"\";\r\n        }\r\n        var mmPaymentDate = mmStartDate.clone()\r\n        var map = {\r\n            1: function () {\r\n                return mmPaymentDate.add(1 * rowNum, \"y\");\r\n            },\r\n            2: function () {\r\n                return mmPaymentDate.add(6 * rowNum, \"month\");\r\n            },\r\n            4: function () {\r\n                return mmPaymentDate.add(3 * rowNum, \"month\");\r\n            },\r\n            12: function () {\r\n                return mmPaymentDate.add(1 * rowNum, \"month\");\r\n            },\r\n            26: function () {\r\n                return mmPaymentDate.add(14 * rowNum, \"day\");\r\n            },\r\n            52: function () {\r\n                return mmPaymentDate.add(7 * rowNum, \"day\");\r\n            }\r\n        };\r\n        if (map[paymentPerYr]) {\r\n            map[paymentPerYr]();\r\n            return mmPaymentDate.format(\"DD-MMM-YYYY\");\r\n        }\r\n        return \"\";\r\n    }\r\n\r\n    function generateLoanScheduleData(\r\n        loanAmount,\r\n        loanInterestRate,\r\n        numberOfPaymentPerYear,\r\n        loanPeriodInYears,\r\n        mmStartDate) {\r\n        _loanTables.splice(0, _loanTables.length);\r\n        var paymentPerPeriodAmount = getPaymentPerPeriodAmount(\r\n            loanAmount,\r\n            loanInterestRate,\r\n            numberOfPaymentPerYear,\r\n            loanPeriodInYears);\r\n        _loanTables.push({\r\n            rownum: 0,\r\n            paymentDate: mmStartDate.format(\"DD-MMM-YYYY\"),\r\n            paymentAmount: paymentPerPeriodAmount,\r\n            balanceAmount: loanAmount\r\n        });\r\n        var periodNumber = loanPeriodInYears * numberOfPaymentPerYear;\r\n\r\n        for (var idx = 1; idx <= periodNumber; idx++) {\r\n            var lastBalanceAmt = _loanTables[idx - 1].balanceAmount;\r\n            var interest = Math.round(lastBalanceAmt * (loanInterestRate / 100) / numberOfPaymentPerYear * 100) / 100;\r\n            var principal = paymentPerPeriodAmount - interest;\r\n\r\n            var item = {\r\n                rownum: idx,\r\n                paymentDate: getPaymentDate(mmStartDate, idx, numberOfPaymentPerYear),\r\n                paymentAmount: paymentPerPeriodAmount,\r\n                principal: principal,\r\n                interestAmount: interest,\r\n                balanceAmount: lastBalanceAmt - principal\r\n            };\r\n            _loanTables.push(item);\r\n        }\r\n\r\n        var totalInterest = _.sumBy(_loanTables, function (x) {\r\n            return x.interestAmount;\r\n        });\r\n        var totalExtraPayments = _.sumBy(_loanTables, function (x) {\r\n            return x.extraPaymentAmount;\r\n        });\r\n        var totalPayment = _.sumBy(_loanTables, function(x){\r\n            if (_.isNumber(x.paymentAmount)) {\r\n                return x.paymentAmount;\r\n            }\r\n            return 0;\r\n        });\r\n        if (_.isNumber(totalExtraPayments)) {\r\n            totalPayment += totalExtraPayments;\r\n        }\r\n        //this.dataValue = {\r\n        //    items: _loanTables,\r\n        //    paymentPerPeriodAmount: paymentPerPeriodAmount,\r\n        //    numberOfPayments: periodNumber,\r\n        //    actualNumberOfPayments: periodNumber,\r\n        //    totalInterestPaid: totalInterest,\r\n        //    totalExtraPayments: totalExtraPayments,\r\n        //    totalPayment: totalPayment\r\n        //};\r\n    }\r\n\r\n    function reRenderRows() {\r\n        removeAllRowsFromTable();\r\n        var root = $(\".formio-component-paymentTable\").get(0);\r\n        var mmStartDate = getStartDate();\r\n        var loanAmount = getLoanAmount();\r\n        var $tbody = $(root).find(\"table tbody\");\r\n        if (!mmStartDate || !loanAmount) {\r\n            _loanTables.splice(0, _loanTables.length);\r\n            return;\r\n        } else {\r\n            addStartRow($tbody);\r\n        }\r\n\r\n        var loanPeriodInYears = getLoanPeriodInYears();\r\n        var numberOfPaymentsPerYear = getNumberOfPaymentsPerYear();\r\n        var paymentNumber = loanPeriodInYears * numberOfPaymentsPerYear;\r\n        if (paymentNumber <= 0) {\r\n            return;\r\n        }\r\n\r\n        generateLoanScheduleData(\r\n            loanAmount,\r\n            getAnnualInterestRate(),\r\n            numberOfPaymentsPerYear,\r\n            loanPeriodInYears,\r\n            mmStartDate);\r\n\r\n        for (var i = 1; i <= paymentNumber; i++) {\r\n            addRowToDom($tbody, i, _loanTables[i]);\r\n        }\r\n    }\r\n\r\n    function init() {\r\n        $(\".formio-component-paymentTable\")\r\n            .find(\"button.refresh-schedule\")\r\n            .on(\"click\", function () {\r\n                reRenderRows();\r\n            });\r\n    }\r\n\r\n    setTimeout(function () {\r\n        init();\r\n    }, 1000);\r\n    console.log(\"TEST2\");\r\n})();",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "HTML",
+      "hideLabel": true,
+      "tag": "div",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "<table class=\"table table-bordered table-sm\">\r\n\t<thead class=\"thead-light\">\r\n\t\t<tr>\r\n\t\t\t<th scope=\"col\">\r\n                <b>Payment No.</b>\r\n                <button type='button' class='btn btn-sm refresh-schedule'>Refresh</button>\r\n            </th>\r\n\t\t\t<th scope=\"col\"><b>Payment Date</b></th>\r\n\t\t\t<th scope=\"col\"><b>Payment</b></th>\r\n\t\t\t<th scope=\"col\"><b>Principal</b></th>\r\n\t\t\t<th scope=\"col\"><b>Interest</b></th>\r\n\t\t\t<th scope=\"col\"><b>Extra Payments</b></th>\r\n\t\t\t<th scope=\"col\"><b>Balance</b></th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t</tbody>    \r\n</table>",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "paymentTable",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "tags": [],
+      "reorder": false
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "_id": "5e1f4ba0689e13455880737f",
+  "type": "form",
+  "display": "form",
+  "title": "G2AsSubForm",
+  "name": "G2AsSubForm",
+  "path": "G2AsSubForm"
+}

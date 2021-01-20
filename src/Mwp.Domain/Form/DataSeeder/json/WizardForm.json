@@ -1,0 +1,196 @@
+{
+  "_id": "5ddde7018b47704860b2cd81",
+  "components": [
+    {
+      "title": "Page 1",
+      "label": "Page 1",
+      "type": "panel",
+      "key": "page1",
+      "input": false,
+      "tableView": false,
+      "components": [
+        {
+          "label": "Checkbox",
+          "shortcut": "",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "checkbox",
+          "input": true,
+          "key": "checkbox2",
+          "defaultValue": false,
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "title": "Page 2",
+      "label": "Page 2",
+      "type": "panel",
+      "key": "page2",
+      "input": false,
+      "tableView": false,
+      "components": [
+        {
+          "label": "Checkbox",
+          "shortcut": "",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "checkbox",
+          "input": true,
+          "key": "checkbox3",
+          "defaultValue": false,
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {}
+        },
+        {
+          "label": "Checkbox",
+          "shortcut": "",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "checkbox",
+          "input": true,
+          "key": "checkbox4",
+          "defaultValue": false,
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "title": "Page 3",
+      "label": "Page 3",
+      "type": "panel",
+      "key": "page3",
+      "input": false,
+      "tableView": false,
+      "components": [
+        {
+          "label": "Checkbox",
+          "shortcut": "",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "checkbox",
+          "input": true,
+          "key": "checkbox5",
+          "defaultValue": false,
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {}
+        },
+        {
+          "label": "Checkbox",
+          "shortcut": "",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "checkbox",
+          "input": true,
+          "key": "checkbox6",
+          "defaultValue": false,
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {}
+        },
+        {
+          "label": "Checkbox",
+          "shortcut": "",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "checkbox",
+          "input": true,
+          "key": "checkbox7",
+          "defaultValue": false,
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {}
+        }
+      ]
+    }
+  ],
+  "display": "wizard",
+  "type": "form",
+  "title": "wizard1",
+  "name": "wizard1",
+  "path": "wizard1"
+}

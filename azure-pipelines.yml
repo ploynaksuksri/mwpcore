@@ -1,0 +1,163 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  branches:
+    include:
+    - develop
+  paths:    
+    exclude:
+    - src/Mwp.IdentityServer/*
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  projectName: 'Mwp.HttpApi.Host'
+  dockerRegistryServiceConnection: 'mwpacr'
+  imageRepository: 'mwp-coreapi'
+  containerRegistry: 'mwpacr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/src/$(projectName)/Dockerfile'  
+  disable.coverage.autogenerate: 'true'
+
+jobs:
+  - job: RunTests
+    displayName: Run Tests
+    continueOnError: false
+    pool:
+      vmImage: 'windows-latest'
+      
+    steps:
+    - task: DotNetCoreCLI@2      
+      displayName: Restore Nuget Package
+      inputs:
+        command: 'restore'
+        projects: '**/$(projectName).csproj'
+        feedsToUse: 'config'
+        nugetConfigPath: 'NuGet.Config'
+        externalFeedCredentials: 'AbpCommercial'
+
+    - task: CmdLine@2
+      displayName: Start storage emulator
+      inputs:
+        script: |
+            echo Starting MsSql localdb...  
+            
+            sqllocaldb create MSSQLLocalDB
+            sqllocaldb start MSSQLLocalDB
+            sqllocaldb info MSSQLLocalDB
+            
+            echo Starting Storage Emulator...
+            "C:\Program Files (x86)\Microsoft SDKs\Azure\Storage Emulator\AzureStorageEmulator.exe" start
+            
+            echo Storage Emulator started...
+            
+    - task: DotNetCoreCLI@2
+      displayName: Run tests
+      inputs:
+        command: 'test'
+        projects: '**/*.Tests.csproj'
+        arguments: '--collect:"XPlat Code Coverage" --settings coverlet.runsettings'
+
+    - task: reportgenerator@4
+      displayName: Generate coverage report
+      inputs:
+        reports: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
+        targetdir: 'coveragereport'
+
+    - task: PublishCodeCoverageResults@1
+      displayName: Publish coverage report
+      inputs:
+        codeCoverageTool: 'Cobertura'
+        summaryFileLocation: '**/Cobertura.xml'
+        reportDirectory: 'coveragereport'
+
+  - job: GetSemVer
+    displayName: Get App Semantic Version
+    dependsOn: RunTests
+    continueOnError: false
+    pool:
+      vmImage: 'ubuntu-latest'
+      
+    steps:
+    - task: PowerShell@2
+      name: GetAppVersion
+      inputs:
+        targetType: 'inline'
+        script: |
+          [xml]$cn = Get-Content $(Build.SourcesDirectory)/src/$(projectName)/$(projectName).csproj
+          $version = $cn.Project.PropertyGroup.Version
+          Write-Host "##vso[task.setvariable variable=version;isOutput=true]$version"
+
+  - job: Publish
+    displayName: Publish 
+    dependsOn: GetSemVer
+    continueOnError: false
+    pool:
+      vmImage: 'ubuntu-latest'
+      
+    variables:
+      appVersion: $[ dependencies.GetSemVer.outputs['GetAppVersion.version'] ]
+      buildIncrement: $[counter(variables['appVersion'], 1)]
+
+    steps:
+    - task: PowerShell@2
+      displayName: Update build number
+      inputs:
+        targetType: 'inline'
+        script: |
+          $buildNumber = "$(appVersion)"
+          if( $(buildIncrement) -ne 1 ){
+             $buildNumber = "$buildNumber-$(buildIncrement)"
+          }          
+          Write-Host "##vso[build.updatebuildnumber]$buildNumber"
+
+    - task: DotNetCoreCLI@2
+      displayName: Restore Nuget Package
+      inputs:
+        command: 'restore'
+        projects: '**/$(projectName).csproj'
+        feedsToUse: 'config'
+        nugetConfigPath: 'NuGet.Config'
+        externalFeedCredentials: 'AbpCommercial'
+
+    - task: DotNetCoreCLI@2
+      displayName: Publish $(projectName)
+      inputs:
+        command: 'publish'
+        publishWebProjects: false
+        projects: '**/$(projectName).csproj'
+        arguments: '-o $(Build.SourcesDirectory)/src/$(projectName)/publish -c Release'
+        zipAfterPublish: false
+        modifyOutputPath: false
+
+    - task: Docker@2
+      displayName: Build docker image and push to container registry
+      inputs:
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'buildAndPush'
+        Dockerfile: '$(dockerfilePath)'
+        buildContext: '$(Build.SourcesDirectory)'
+        tags: |
+          $(Build.BuildNumber)
+          latest
+
+    - task: DotNetCoreCLI@2
+      displayName: Publish Mwp.DbMigrator      
+      inputs:
+        command: 'publish'
+        publishWebProjects: false
+        projects: '**/Mwp.DbMigrator.csproj'
+        arguments: '--output $(Build.ArtifactStagingDirectory)/migrator'
+        zipAfterPublish: false
+        modifyOutputPath: false
+
+    - task: PublishBuildArtifacts@1
+      displayName: Publish Mwp.DbMigrator to artifact
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'

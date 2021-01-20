@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>Mwp</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Mwp.EntityFrameworkCore\Mwp.EntityFrameworkCore.csproj" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Rollback\Scripts\*.sql" />
+		<Content Remove="Rollback\Scripts\*.sql" />
+	</ItemGroup>
+</Project>

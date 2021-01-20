@@ -1,0 +1,288 @@
+{
+  "components": [
+    {
+      "label": "loanAmount",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "loanAmount",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "tags": [],
+      "reorder": false
+    },
+    {
+      "label": "annualInterestRate",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "annualInterestRate",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "tags": [],
+      "reorder": false
+    },
+    {
+      "label": "loanPeriodInYears",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "loanPeriodInYears",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "tags": [],
+      "reorder": false
+    },
+    {
+      "label": "Number of Payments Per Year",
+      "labelPosition": "left-right",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "select",
+      "input": true,
+      "key": "numberOfPaymentsPerYear",
+      "defaultValue": "",
+      "validate": {
+        "customMessage": "",
+        "json": "",
+        "select": false
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "data": {
+        "values": [
+          {
+            "label": "1",
+            "value": "1"
+          },
+          {
+            "label": "2",
+            "value": "2"
+          },
+          {
+            "label": "4",
+            "value": "4"
+          },
+          {
+            "label": "12",
+            "value": "12"
+          },
+          {
+            "label": "26",
+            "value": "26"
+          },
+          {
+            "label": "52",
+            "value": "52"
+          }
+        ]
+      },
+      "valueProperty": "value",
+      "selectThreshold": 0.3,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false,
+      "lazyLoad": false,
+      "selectValues": "",
+      "disableLimit": false,
+      "sort": "",
+      "reference": false
+    },
+    {
+      "label": "Start Date",
+      "labelPosition": "left-right",
+      "format": "yyyy-MM-dd",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "datetime",
+      "input": true,
+      "key": "startDate",
+      "suffix": true,
+      "defaultValue": "",
+      "widget": {
+        "type": "calendar",
+        "displayInTimezone": "viewer",
+        "language": "en",
+        "useLocaleSettings": false,
+        "allowInput": true,
+        "mode": "single",
+        "enableTime": false,
+        "noCalendar": false,
+        "format": "yyyy-MM-dd",
+        "defaultDate": "",
+        "hourIncrement": 1,
+        "minuteIncrement": 1,
+        "time_24hr": false,
+        "minDate": "",
+        "maxDate": "",
+        "icons": "fontawesome",
+        "i18n": {
+          "lng": "en",
+          "resources": {
+            "en": {
+              "translation": {
+                "complete": "Submission Complete",
+                "error": "Please fix the following errors before submitting.",
+                "required": "{{field}} is required",
+                "pattern": "{{field}} does not match the pattern {{pattern}}",
+                "minLength": "{{field}} must be longer than {{length}} characters.",
+                "maxLength": "{{field}} must be shorter than {{length}} characters.",
+                "minWords": "{{field}} must have more than {{length}} words.",
+                "maxWords": "{{field}} must have less than {{length}} words.",
+                "min": "{{field}} cannot be less than {{min}}.",
+                "max": "{{field}} cannot be greater than {{max}}.",
+                "minSelectedCount": "You must select at least {{minCount}} items to continue.",
+                "maxSelectedCount": "You can only select up to {{maxCount}} items to continue.",
+                "maxDate": "{{field}} should not contain date after {{- maxDate}}",
+                "minDate": "{{field}} should not contain date before {{- minDate}}",
+                "invalid_email": "{{field}} must be a valid email.",
+                "invalid_url": "{{field}} must be a valid url.",
+                "invalid_regex": "{{field}} does not match the pattern {{regex}}.",
+                "invalid_date": "{{field}} is not a valid date.",
+                "invalid_day": "{{field}} is not a valid day.",
+                "mask": "{{field}} does not match the mask.",
+                "stripe": "{{stripe}}",
+                "month": "Month",
+                "day": "Day",
+                "year": "Year",
+                "january": "January",
+                "february": "February",
+                "march": "March",
+                "april": "April",
+                "may": "May",
+                "june": "June",
+                "july": "July",
+                "august": "August",
+                "september": "September",
+                "october": "October",
+                "november": "November",
+                "december": "December",
+                "next": "Next",
+                "previous": "Previous",
+                "cancel": "Cancel",
+                "submit": "Submit Form"
+              }
+            }
+          }
+        }
+      },
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "enableTime": false,
+      "datePicker": {
+        "minDate": "",
+        "maxDate": ""
+      },
+      "reorder": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "payments",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "mwp-dynamic-custom-component",
+      "input": true,
+      "key": "payments",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "selectedComponent": "g2Form",
+      "customParametersAsJson": "{\n\t\"loanAmount\": \"loanAmount\",\n\t\"annualInterestRate\": \"annualInterestRate\",\n\t\"loanPeriodInYears\": \"loanPeriodInYears\",\n\t\"numberOfPaymentsPerYear\": \"numberOfPaymentsPerYear\",\n\t\"startDate\": \"startDate\"\n}",
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "_id": "5e2808d79404d24ea4d4976f",
+  "type": "form",
+  "display": "form",
+  "title": "TestDynamic2",
+  "name": "TestDynamic2",
+  "path": "TestDynamic2"
+}

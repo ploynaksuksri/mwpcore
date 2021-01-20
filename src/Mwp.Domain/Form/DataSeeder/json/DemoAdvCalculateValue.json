@@ -1,0 +1,200 @@
+{
+  "_id": "5ddde6a46d35785c6088b1d9",
+  "components": [
+    {
+      "label": "LineItems",
+      "disableAddingRemovingRows": false,
+      "addAnother": "",
+      "addAnotherPosition": "bottom",
+      "removePlacement": "col",
+      "defaultOpen": false,
+      "layoutFixed": false,
+      "enableRowGroups": false,
+      "reorder": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "datagrid",
+      "input": true,
+      "key": "lineItems",
+      "defaultValue": [
+        {
+          "productName": ""
+        }
+      ],
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "components": [
+        {
+          "label": "Product Name",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "textfield",
+          "input": true,
+          "key": "productName",
+          "defaultValue": "",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "widget": {
+            "type": ""
+          },
+          "reorder": false,
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-0"
+        },
+        {
+          "label": "UnitPrice",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "unitPrice",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "delimiter": false,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-1"
+        },
+        {
+          "label": "Quantity",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "quantity",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "reorder": false,
+          "delimiter": false,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-2"
+        },
+        {
+          "label": "Total",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "total",
+          "calculateValue": "value = row.unitPrice * row.quantity;",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": false,
+          "requireDecimal": false,
+          "encrypted": false,
+          "reorder": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-3"
+        }
+      ],
+      "groupToggle": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "Grand Total",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "grandTotal",
+      "calculateValue": "value = _.sum(data.lineItems.map(function(l){ return l.unitPrice * l.quantity;}));",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "defaultValue": 0,
+      "reorder": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "type": "form",
+  "display": "form",
+  "title": "DemoAdvCalculateValue",
+  "name": "DemoAdvCalculateValue",
+  "path": "DemoAdvCalculateValue"
+}

@@ -1,0 +1,97 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  branches:
+    include:
+    - develop
+  paths:    
+    include:
+    - src/Mwp.IdentityServer/*
+
+resources:
+- repo: self
+
+variables:
+  # Container registry service connection established during pipeline creation
+  projectName: 'Mwp.IdentityServer'
+  dockerRegistryServiceConnection: 'mwpacr'
+  imageRepository: 'mwp-identityserver'  
+  containerRegistry: 'mwpacr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/src/$(projectName)/Dockerfile'  
+  disable.coverage.autogenerate: 'true'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+jobs:    
+  - job: GetSemVer
+    displayName: Get App Semantic Version
+    continueOnError: false
+    pool:
+      vmImage: $(vmImageName)
+      
+    steps:    
+    - task: PowerShell@2
+      name: GetAppVersion
+      inputs:
+        targetType: 'inline'
+        script: |
+          [xml]$cn = Get-Content $(Build.SourcesDirectory)/src/$(projectName)/$(projectName).csproj
+          $version = $cn.Project.PropertyGroup.Version
+          Write-Host "##vso[task.setvariable variable=version;isOutput=true]$version"
+
+  - job: Build
+    displayName: Build
+    dependsOn: GetSemVer
+    continueOnError: false
+    pool:
+      vmImage: $(vmImageName)
+      
+    variables:
+      appVersion: $[ dependencies.GetSemVer.outputs['GetAppVersion.version'] ]
+      buildIncrement: $[counter(variables['appVersion'], 1)]
+
+    steps:    
+    - task: PowerShell@2
+      displayName: Update build number
+      inputs:
+        targetType: 'inline'
+        script: |
+          $buildNumber = "$(appVersion)"          
+          if( $(buildIncrement) -ne 1 ){
+             $buildNumber = "$buildNumber-$(buildIncrement)"
+          }          
+          Write-Host "##vso[build.updatebuildnumber]$buildNumber"
+
+    - task: DotNetCoreCLI@2      
+      displayName: Restore Nuget Package
+      inputs:
+        command: 'restore'
+        projects: '**/$(projectName).csproj'
+        feedsToUse: 'config'
+        nugetConfigPath: 'NuGet.Config'
+        externalFeedCredentials: 'AbpCommercial'
+
+    - task: DotNetCoreCLI@2
+      displayName: Publish $(projectName)
+      inputs:
+        command: 'publish'
+        publishWebProjects: false
+        projects: '**/$(projectName).csproj'
+        arguments: '-o $(Build.SourcesDirectory)/src/$(projectName)/publish -c Release'
+        zipAfterPublish: false
+        modifyOutputPath: false
+
+    - task: Docker@2
+      displayName: Build docker image and push to container registry
+      inputs:
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        repository: '$(imageRepository)'
+        command: 'buildAndPush'
+        Dockerfile: '$(dockerfilePath)'
+        buildContext: '$(Build.SourcesDirectory)'
+        tags: |
+          $(Build.BuildNumber)
+          latest

@@ -1,0 +1,17 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Information"
+      }
+    },
+    "Enrich": [ "FromLogContext" ],
+    "WriteTo": [
+      {
+        "Name": "Console"
+      }
+    ]
+  }
+}

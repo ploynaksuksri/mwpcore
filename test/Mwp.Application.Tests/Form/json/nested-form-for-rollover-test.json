@@ -1,0 +1,74 @@
+{
+  "display": "form",
+  "settings": {
+    "pdf": {
+      "id": "1ec0f8ee-6685-5d98-a847-26f67b67d6f0",
+      "src": "https://files.form.io/pdf/5692b91fd1028f01000407e3/file/1ec0f8ee-6685-5d98-a847-26f67b67d6f0"
+    }
+  },
+  "components": [
+    {
+      "label": "Text Field",
+      "tableView": true,
+      "key": "textField",
+      "type": "textfield",
+      "input": true,
+      "mwp": {
+        "includeInTheRollOver":true 
+      } 
+    },
+    {
+      "label": "Container",
+      "tableView": false,
+      "key": "container",
+      "type": "container",
+      "input": true,
+      "mwp": {
+        "includeInTheRollOver": true
+      },
+      "components": [
+        {
+          "label": "Text Field",
+          "tableView": true,
+          "key": "textField",
+          "type": "textfield",
+          "input": true,
+          "mwp": {
+            "includeInTheRollOver": true
+          }
+        },
+        {
+          "label": "Container",
+          "tableView": false,
+          "key": "container1",
+          "type": "container",
+          "input": true,
+          "components": [
+            {
+              "label": "Checkbox",
+              "tableView": false,
+              "key": "checkbox",
+              "type": "checkbox",
+              "input": true
+            }
+          ]
+        },
+        {
+          "label": "Text Field",
+          "tableView": true,
+          "key": "textField1",
+          "type": "textfield",
+          "input": true
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "input": true,
+      "tableView": false
+    }
+  ]
+}

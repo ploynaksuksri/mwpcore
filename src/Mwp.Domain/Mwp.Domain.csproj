@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+	<TargetFramework>netcoreapp3.1</TargetFramework>
+	<RootNamespace>Mwp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\Mwp.Domain.Shared\Mwp.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Volo.Abp.Emailing" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.Identity.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.IdentityServer.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.PermissionManagement.Domain.IdentityServer" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.LanguageManagement.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.LeptonTheme.Management.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Saas.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Chat.Domain" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.UI.Navigation" Version="3.3.0" />
+	<PackageReference Include="Volo.Abp.Sms.Twilio" Version="3.3.0" />
+	<PackageReference Include="Azure.Identity" Version="1.1.1" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="3.1.5" />
+	<PackageReference Include="Serilog.Extensions.Hosting" Version="3.1.0" />
+	<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+	<PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="3.1.0" />
+	<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+	<PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Include="Form\DataSeeder\json\*.json" />
+	<Content Remove="Form\DataSeeder\json\*.json" />
+  </ItemGroup>
+</Project>

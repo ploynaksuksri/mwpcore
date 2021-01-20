@@ -1,0 +1,25 @@
+{
+  "data": {
+    "submit": true,
+    "files": [
+      {
+        "fileId": "5315c43d-c402-4a26-ad83-0586cd923e02",
+        "fileName": "test-doc.docx",
+        "fileSize": 11919,
+        "fileHash": "8D381770DEE5327C86F9A5026C18E7B8AC413ED4B7C1925DC3F9D8F48C3DCED6",
+        "isFromTemplate": true
+      }
+    ]
+  },
+  "metadata": {
+    "timezone": "Asia/Bangkok",
+    "offset": 420,
+    "origin": "http://localhost:4200",
+    "referrer": "",
+    "browserName": "Netscape",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36 Edg/86.0.622.38",
+    "pathName": "/forms/08f0be6a-7ca4-41f4-ae71-d9995c2d1c53/submission/new",
+    "onLine": true
+  },
+  "state": "submitted"
+}

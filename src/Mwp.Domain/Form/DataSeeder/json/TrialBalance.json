@@ -1,0 +1,142 @@
+﻿{
+  "_id": "5ddd532b41a56c69e4ce44f2",
+  "components": [
+    {
+      "label": "Form",
+      "customClass": "p-0",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "form",
+      "input": true,
+      "key": "form2",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "form": "5d936d4abef254181cda9415",
+      "formRevision": "",
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "HTML",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "(This form need to implement as FormIO Custom Component)",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html2",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "reorder": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "HTML",
+      "tag": "div",
+      "className": "row",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "<button class=\"btn\" type='button'>Import Trial Balance>></button>\n\n<div class=\"btn-group ml-3\">\n  <button type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n    Tools\n  </button>\n  \n</div>",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "reorder": false,
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "HTML",
+      "tag": "dlv",
+      "className": "",
+      "attrs": [
+        {
+          "attr": "",
+          "value": ""
+        }
+      ],
+      "content": "<table class=\"table table-bordered\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th scope=\"col\"><input type=\"checkbox\"/></th>\r\n\t\t\t<th scope=\"col\">Code - Description</th>\r\n\t\t\t<th scope=\"col\">Lead Schedules</th>\r\n\t\t\t<th scope=\"col\">Interim</th>\r\n\t\t\t<th scope=\"col\">Initial</th>\r\n\t\t\t<th scope=\"col\">Adjustment</th>\r\n\t\t\t<th scope=\"col\">Final</th>\r\n\t\t\t<th scope=\"col\">Prior Period</th>\r\n\t\t\t<th scope=\"col\">Ref</th>\r\n\t\t\t<th scope=\"col\">Note</th>\r\n\t\t</tr>\t\t\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><input type=\"checkbox\"/></td>\r\n\t\t\t<td>1 - Sales</td>\r\n\t\t\t<td>\r\n\t\t\t\t<select>\r\n\t\t\t\t\t<option>Q2-1 - Turnover</option>\r\n\t\t\t\t</select>\r\n\t\t\t</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>-100,000.00</td>\r\n\t\t\t<td>C2</td>\r\n\t\t\t<td><span class=\"fa fa-plus-circle\"></span></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><input type=\"checkbox\"/></td>\r\n\t\t\t<td>227 - Other operating leases - rent</td>\r\n\t\t\t<td>\r\n\t\t\t\t<select>\r\n\t\t\t\t\t<option>Q5-10 - Establishment costs</option>\r\n\t\t\t\t</select>\r\n\t\t\t</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>1,496.00</td>\r\n\t\t\t<td>C3</td>\r\n\t\t\t<td><span class=\"fa fa-plus-circle\"></span></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><input type=\"checkbox\"/></td>\r\n\t\t\t<td>233 - Light and heat</td>\r\n\t\t\t<td>\r\n\t\t\t\t<select>\r\n\t\t\t\t\t<option>Q5-10 - Establishment costs</option>\r\n\t\t\t\t</select>\r\n\t\t\t</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>0.00</td>\r\n\t\t\t<td>200</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td><span class=\"fa fa-plus-circle\"></span></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+      "refreshOnChange": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "htmlelement",
+      "input": false,
+      "key": "html3",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "type": "form",
+  "display": "form",
+  "title": "Trial Balance​",
+  "name": "Trial Balance​",
+  "path": "Trial Balance​"
+}

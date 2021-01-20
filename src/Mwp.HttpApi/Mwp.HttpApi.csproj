@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Mwp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mwp.Application.Contracts\Mwp.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Admin.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.IdentityServer.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Saas.Host.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.LeptonTheme.Management.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.HttpApi" Version="3.3.0" />
+    <PackageReference Include="Volo.Chat.HttpApi" Version="3.3.0" />
+  </ItemGroup>
+</Project>

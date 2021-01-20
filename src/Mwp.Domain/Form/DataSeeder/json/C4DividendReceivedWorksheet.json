@@ -1,0 +1,2603 @@
+{
+  "components": [
+    {
+      "label": "DividenedSummary",
+      "hideLabel": true,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "container",
+      "input": true,
+      "key": "dividenedSummary",
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "components": [
+        {
+          "customClass": "table-sm",
+          "bordered": true,
+          "condensed": true,
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "numRows": 5,
+          "numCols": 7,
+          "type": "table",
+          "input": false,
+          "key": "table2",
+          "label": "",
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "rows": [
+            [
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "tag": "b",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Dividend Summary",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Unfranked",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html2",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Franked",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html3",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "TFN Withholding",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html4",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Net Amount",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html5",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Franking Credit",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html6",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Notes",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html7",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "ATO Prefill",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html8",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "AtoPrefillUnfranked",
+                    "hideLabel": true,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "atoPrefillUnfranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "AtoPrefillFranked",
+                    "hideLabel": true,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "atoPrefillFranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "AtoPrefillTfnWithholding",
+                    "hideLabel": true,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "atoPrefillTfnWithholding",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "AtoPrefillNetAmount",
+                    "hideLabel": true,
+                    "mask": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "atoPrefillNetAmount",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.dividenedSummary.atoPrefillUnfranked + data.dividenedSummary.atoPrefillFranked - data.dividenedSummary.atoPrefillTfnWithholding;",
+                    "refreshOn": "data",
+                    "reorder": false
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "AtoPrefillFrankingCredit",
+                    "hideLabel": true,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "atoPrefillFrankingCredit",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "AtoPrefillNote",
+                    "hideLabel": true,
+                    "allowMultipleMasks": false,
+                    "showWordCount": false,
+                    "showCharCount": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "textfield",
+                    "input": true,
+                    "key": "atoPrefillNote",
+                    "defaultValue": "",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "inputFormat": "plain",
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "widget": {
+                      "type": ""
+                    },
+                    "reorder": false
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Dividends Received: Non Base Rate Entities",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html9",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "NonBaseRateEntitiesUnfranked",
+                    "hideLabel": true,
+                    "persistent": false,
+                    "mask": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "nonBaseRateEntitiesUnfranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesUnfranked;",
+                    "refreshOn": "data",
+                    "reorder": false
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "NonBaseRateEntitiesFranked",
+                    "hideLabel": true,
+                    "persistent": false,
+                    "mask": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "nonBaseRateEntitiesFranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesFranked;",
+                    "refreshOn": "data",
+                    "reorder": false
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "NonBaseRateEntitiesTfnWithholding",
+                    "hideLabel": true,
+                    "persistent": false,
+                    "mask": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "nonBaseRateEntitiesTfnWithholding",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesTfnWithholding;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "NonBaseRateEntitiesNetAmount",
+                    "hideLabel": true,
+                    "persistent": false,
+                    "mask": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "nonBaseRateEntitiesNetAmount",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesNetAmount;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "NonBaseRateEntitiesFrankingCredit",
+                    "hideLabel": true,
+                    "persistent": false,
+                    "mask": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "nonBaseRateEntitiesFrankingCredit",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesFrankingCredit;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "NonBaseRateEntitiesNote",
+                    "hideLabel": true,
+                    "allowMultipleMasks": false,
+                    "showWordCount": false,
+                    "showCharCount": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "textfield",
+                    "input": true,
+                    "key": "nonBaseRateEntitiesNote",
+                    "defaultValue": "",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "inputFormat": "plain",
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "widget": {
+                      "type": ""
+                    },
+                    "reorder": false
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Dividends Received: Base Rate Entities",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html10",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],                   
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "BaseRateEntitiesUnfranked",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "baseRateEntitiesUnfranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumBaseRateEntitiesUnfranked;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "BaseRateEntitiesFranked",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "baseRateEntitiesFranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumBaseRateEntitiesFranked;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "BaseRateEntitiesTfnWithholding",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "baseRateEntitiesTfnWithholding",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumBaseRateEntitiesTfnWithholding;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "BaseRateEntitiesNetAmount",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "baseRateEntitiesNetAmount",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumBaseRateEntitiesNetAmount;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "BaseRateEntitiesFrankingCredit",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "baseRateEntitiesFrankingCredit",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "calculateValue": "value = data.sumBaseRateEntitiesFrankingCredit;",
+                    "refreshOn": "data",
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "BaseRateEntitiesNote",
+                    "hideLabel": true,
+                    "allowMultipleMasks": false,
+                    "showWordCount": false,
+                    "showCharCount": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "textfield",
+                    "input": true,
+                    "key": "baseRateEntitiesNote",
+                    "defaultValue": "",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "widget": {
+                      "type": ""
+                    },
+                    "reorder": false,
+                    "inputFormat": "plain",
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "components": [
+                  {
+                    "label": "HTML",
+                    "tag": "b",
+                    "className": "",
+                    "attrs": [
+                      {
+                        "attr": "",
+                        "value": ""
+                      }
+                    ],
+                    "content": "Total",
+                    "refreshOnChange": false,
+                    "mask": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "htmlelement",
+                    "input": false,
+                    "key": "html11",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {}
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "TotalUnfranked",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "totalUnfranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesUnfranked + data.sumBaseRateEntitiesUnfranked;",
+                    "refreshOn": "data"
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "TotalFranked",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "totalFranked",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesFranked + data.sumBaseRateEntitiesFranked;",
+                    "refreshOn": "data"
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "TotalTfnWithholding",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "totalTfnWithholding",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesTfnWithholding + data.sumBaseRateEntitiesTfnWithholding;",
+                    "refreshOn": "data"
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "TotalNetAmount",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "totalNetAmount",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesNetAmount + data.sumBaseRateEntitiesNetAmount;",
+                    "refreshOn": "data"
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "TotalFrankingCredit",
+                    "hideLabel": true,
+                    "mask": false,
+                    "persistent": false,
+                    "disabled": true,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "number",
+                    "input": true,
+                    "key": "totalFrankingCredit",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "reorder": false,
+                    "delimiter": true,
+                    "requireDecimal": false,
+                    "encrypted": false,
+                    "decimalLimit": 2,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "calculateValue": "value = data.sumNonBaseRateEntitiesFrankingCredit + data.sumBaseRateEntitiesFrankingCredit;",
+                    "refreshOn": "data"
+                  }
+                ]
+              },
+              {
+                "components": [
+                  {
+                    "label": "TotalNote",
+                    "hideLabel": true,
+                    "allowMultipleMasks": false,
+                    "showWordCount": false,
+                    "showCharCount": false,
+                    "tableView": true,
+                    "alwaysEnabled": false,
+                    "type": "textfield",
+                    "input": true,
+                    "key": "totalNote",
+                    "defaultValue": "",
+                    "validate": {
+                      "customMessage": "",
+                      "json": ""
+                    },
+                    "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                    },
+                    "inputFormat": "plain",
+                    "encrypted": false,
+                    "properties": {},
+                    "customConditional": "",
+                    "logic": [],
+                    "attributes": {},
+                    "widget": {
+                      "type": ""
+                    },
+                    "reorder": false
+                  }
+                ]
+              }
+            ]
+          ],
+          "header": [],
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "reorder": false
+        }
+      ],
+      "encrypted": false,
+      "reorder": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "None Base Rate(%)",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "noneBasedRate",
+      "validate": {
+        "min": 0,
+        "customMessage": "",
+        "json": "",
+        "max": 100
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": true,
+      "requireDecimal": false,
+      "encrypted": false,
+      "decimalLimit": 2,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "defaultValue": 30,
+      "reorder": false
+    },
+    {
+      "label": "Dividened Received : Non Base Rate Entities",
+      "disableAddingRemovingRows": false,
+      "addAnother": "",
+      "addAnotherPosition": "bottom",
+      "removePlacement": "col",
+      "defaultOpen": false,
+      "layoutFixed": false,
+      "enableRowGroups": false,
+      "customClass": "table-bordered table-sm",
+      "reorder": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "datagrid",
+      "input": true,
+      "key": "dividenedReceivedNonBaseRateEntities",
+      "defaultValue": [
+        {
+          "date": "",
+          "company": "",
+          "notes": "",
+          "unfranked": 0,
+          "franked": 0,
+          "tfnWithholding": 0,
+          "netAmount": 0,
+          "frankingCredit": 0
+        }
+      ],
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "components": [
+        {
+          "label": "Date",
+          "format": "yyyy-MM-dd",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "datetime",
+          "input": true,
+          "key": "date",
+          "suffix": true,
+          "defaultValue": "",
+          "widget": {
+            "type": "calendar",
+            "displayInTimezone": "viewer",
+            "language": "en",
+            "useLocaleSettings": false,
+            "allowInput": true,
+            "mode": "single",
+            "enableTime": false,
+            "noCalendar": false,
+            "format": "yyyy-MM-dd",
+            "defaultDate": "",
+            "hourIncrement": 1,
+            "minuteIncrement": 1,
+            "time_24hr": true,
+            "minDate": "",
+            "maxDate": "",
+            "icons": "fontawesome",
+            "i18n": {
+              "lng": "en",
+              "resources": {
+                "en": {
+                  "translation": {
+                    "complete": "Submission Complete",
+                    "error": "Please fix the following errors before submitting.",
+                    "required": "{{field}} is required",
+                    "pattern": "{{field}} does not match the pattern {{pattern}}",
+                    "minLength": "{{field}} must be longer than {{length}} characters.",
+                    "maxLength": "{{field}} must be shorter than {{length}} characters.",
+                    "minWords": "{{field}} must have more than {{length}} words.",
+                    "maxWords": "{{field}} must have less than {{length}} words.",
+                    "min": "{{field}} cannot be less than {{min}}.",
+                    "max": "{{field}} cannot be greater than {{max}}.",
+                    "minSelectedCount": "You must select at least {{minCount}} items to continue.",
+                    "maxSelectedCount": "You can only select up to {{maxCount}} items to continue.",
+                    "maxDate": "{{field}} should not contain date after {{- maxDate}}",
+                    "minDate": "{{field}} should not contain date before {{- minDate}}",
+                    "invalid_email": "{{field}} must be a valid email.",
+                    "invalid_url": "{{field}} must be a valid url.",
+                    "invalid_regex": "{{field}} does not match the pattern {{regex}}.",
+                    "invalid_date": "{{field}} is not a valid date.",
+                    "invalid_day": "{{field}} is not a valid day.",
+                    "mask": "{{field}} does not match the mask.",
+                    "stripe": "{{stripe}}",
+                    "month": "Month",
+                    "day": "Day",
+                    "year": "Year",
+                    "january": "January",
+                    "february": "February",
+                    "march": "March",
+                    "april": "April",
+                    "may": "May",
+                    "june": "June",
+                    "july": "July",
+                    "august": "August",
+                    "september": "September",
+                    "october": "October",
+                    "november": "November",
+                    "december": "December",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "submit": "Submit Form"
+                  }
+                }
+              }
+            }
+          },
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "enableTime": false,
+          "datePicker": {
+            "minDate": "",
+            "maxDate": ""
+          },
+          "timePicker": {
+            "showMeridian": false
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-0"
+        },
+        {
+          "label": "Company",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "textfield",
+          "input": true,
+          "key": "company",
+          "defaultValue": "",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "widget": {
+            "type": ""
+          },
+          "reorder": false,
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-1"
+        },
+        {
+          "label": "Unfranked",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "unfranked",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-2",
+          "decimalLimit": 2,
+          "tags": [],
+          "reorder": false
+        },
+        {
+          "label": "Franked",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "franked",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-3",
+          "tags": [],
+          "reorder": false
+        },
+        {
+          "label": "TFN Withholding",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "tfnWithholding",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "reorder": false,
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-4"
+        },
+        {
+          "label": "Net Amount",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "netAmount",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-5",
+          "calculateValue": "value = row.unfranked + row.franked - row.tfnWithholding;",
+          "refreshOn": "data",
+          "reorder": false
+        },
+        {
+          "label": "Franking Credit",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "frankingCredit",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-6",
+          "decimalLimit": 2,
+          "calculateValue": "var ratePct = data.noneBasedRate / 100;\nvalue = row.franked * ratePct / (1- ratePct);",
+          "refreshOn": "data",
+          "value": null,
+          "reorder": false
+        },
+        {
+          "label": "Notes",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "textfield",
+          "input": true,
+          "key": "notes",
+          "defaultValue": "",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "widget": {
+            "type": ""
+          },
+          "reorder": false,
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-7"
+        }
+      ],
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "groupToggle": false
+    },
+    {
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "numRows": 1,
+      "numCols": 6,
+      "type": "table",
+      "input": false,
+      "key": "table3",
+      "label": "",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "rows": [
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "Sum",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html12",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Unfranked",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumNonBaseRateEntitiesUnfranked",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "calculateValue": "value = _.sumBy(data.dividenedReceivedNonBaseRateEntities,function(x){\n  return x.unfranked;\n});",
+                "defaultValue": 0,
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Franked",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumNonBaseRateEntitiesFranked",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "calculateValue": "value = _.sumBy(data.dividenedReceivedNonBaseRateEntities,function(x){\n  return x.franked;\n});",
+                "defaultValue": 0,
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "TFN Withholding",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumNonBaseRateEntitiesTfnWithholding",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "calculateValue": "value = _.sumBy(data.dividenedReceivedNonBaseRateEntities,function(x){\n  return x.tfnWithholding;\n});",
+                "defaultValue": 0,
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "NetAmount",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumNonBaseRateEntitiesNetAmount",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "calculateValue": "value = _.sumBy(data.dividenedReceivedNonBaseRateEntities,function(x){\n  return x.netAmount;\n});",
+                "defaultValue": 0,
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Franking Credit",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumBaseRateEntitiesFrankingCredit",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "calculateValue": "value = _.sumBy(data.dividenedReceivedNonBaseRateEntities,function(x){\n  return x.frankingCredit;\n});",
+                "defaultValue": 0,
+                "tags": [],
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          }
+        ]
+      ],
+      "header": [],
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "label": "Base Rate (%)",
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "number",
+      "input": true,
+      "key": "baseRate",
+      "validate": {
+        "min": 0,
+        "customMessage": "",
+        "json": "",
+        "max": 100
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "delimiter": false,
+      "requireDecimal": false,
+      "encrypted": false,
+      "decimalLimit": 2,
+      "defaultValue": 27.5,
+      "reorder": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {}
+    },
+    {
+      "label": "Dividends Received: Base Rate Entities",
+      "disableAddingRemovingRows": false,
+      "addAnother": "",
+      "addAnotherPosition": "bottom",
+      "removePlacement": "col",
+      "defaultOpen": false,
+      "layoutFixed": false,
+      "enableRowGroups": false,
+      "reorder": false,
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "type": "datagrid",
+      "input": true,
+      "key": "dividendsReceivedBaseRateEntities",
+      "defaultValue": [
+        {
+          "date2": "",
+          "company2": "",
+          "notes2": "",
+          "unfranked": 0,
+          "franked3": 0,
+          "tfnWithholding2": 0,
+          "franked": 0,
+          "tfnWithholding": 0,
+          "netAmount": 0,
+          "frankingCredit": 0
+        }
+      ],
+      "validate": {
+        "customMessage": "",
+        "json": ""
+      },
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "components": [
+        {
+          "label": "Date",
+          "format": "yyyy-MM-dd",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "datetime",
+          "input": true,
+          "key": "date2",
+          "suffix": true,
+          "defaultValue": "",
+          "widget": {
+            "type": "calendar",
+            "displayInTimezone": "viewer",
+            "language": "en",
+            "useLocaleSettings": false,
+            "allowInput": true,
+            "mode": "single",
+            "enableTime": false,
+            "noCalendar": false,
+            "format": "yyyy-MM-dd",
+            "defaultDate": "",
+            "hourIncrement": 1,
+            "minuteIncrement": 1,
+            "time_24hr": true,
+            "minDate": "",
+            "maxDate": "",
+            "icons": "fontawesome",
+            "i18n": {
+              "lng": "en",
+              "resources": {
+                "en": {
+                  "translation": {
+                    "complete": "Submission Complete",
+                    "error": "Please fix the following errors before submitting.",
+                    "required": "{{field}} is required",
+                    "pattern": "{{field}} does not match the pattern {{pattern}}",
+                    "minLength": "{{field}} must be longer than {{length}} characters.",
+                    "maxLength": "{{field}} must be shorter than {{length}} characters.",
+                    "minWords": "{{field}} must have more than {{length}} words.",
+                    "maxWords": "{{field}} must have less than {{length}} words.",
+                    "min": "{{field}} cannot be less than {{min}}.",
+                    "max": "{{field}} cannot be greater than {{max}}.",
+                    "minSelectedCount": "You must select at least {{minCount}} items to continue.",
+                    "maxSelectedCount": "You can only select up to {{maxCount}} items to continue.",
+                    "maxDate": "{{field}} should not contain date after {{- maxDate}}",
+                    "minDate": "{{field}} should not contain date before {{- minDate}}",
+                    "invalid_email": "{{field}} must be a valid email.",
+                    "invalid_url": "{{field}} must be a valid url.",
+                    "invalid_regex": "{{field}} does not match the pattern {{regex}}.",
+                    "invalid_date": "{{field}} is not a valid date.",
+                    "invalid_day": "{{field}} is not a valid day.",
+                    "mask": "{{field}} does not match the mask.",
+                    "stripe": "{{stripe}}",
+                    "month": "Month",
+                    "day": "Day",
+                    "year": "Year",
+                    "january": "January",
+                    "february": "February",
+                    "march": "March",
+                    "april": "April",
+                    "may": "May",
+                    "june": "June",
+                    "july": "July",
+                    "august": "August",
+                    "september": "September",
+                    "october": "October",
+                    "november": "November",
+                    "december": "December",
+                    "next": "Next",
+                    "previous": "Previous",
+                    "cancel": "Cancel",
+                    "submit": "Submit Form"
+                  }
+                }
+              }
+            }
+          },
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "enableTime": false,
+          "datePicker": {
+            "minDate": "",
+            "maxDate": ""
+          },
+          "timePicker": {
+            "showMeridian": false
+          },
+          "reorder": false,
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-0"
+        },
+        {
+          "label": "Company",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "textfield",
+          "input": true,
+          "key": "company2",
+          "defaultValue": "",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "widget": {
+            "type": ""
+          },
+          "reorder": false,
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-1"
+        },
+        {
+          "label": "Unfranked",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "unfranked",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-2",
+          "reorder": false
+        },
+        {
+          "label": "Franked",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "franked",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-3",
+          "tags": [],
+          "reorder": false
+        },
+        {
+          "label": "TFN Withholding",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "tfnWithholding",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-4",
+          "tags": [],
+          "reorder": false
+        },
+        {
+          "label": "Net Amount",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "netAmount",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-5",
+          "calculateValue": "value = row.unfranked + row.franked - row.tfnWithholding;",
+          "refreshOn": "data",
+          "tags": [],
+          "reorder": false
+        },
+        {
+          "label": "Franking Credit",
+          "mask": false,
+          "disabled": true,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "number",
+          "input": true,
+          "key": "frankingCredit",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "delimiter": true,
+          "requireDecimal": false,
+          "encrypted": false,
+          "decimalLimit": 2,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-6",
+          "tags": [],
+          "calculateValue": "var ratePct = data.baseRate / 100;\nvalue = row.franked * ratePct / (1-ratePct);",
+          "refreshOn": "data",
+          "reorder": false
+        },
+        {
+          "label": "Notes",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "textfield",
+          "input": true,
+          "key": "notes2",
+          "defaultValue": "",
+          "validate": {
+            "customMessage": "",
+            "json": ""
+          },
+          "conditional": {
+            "show": "",
+            "when": "",
+            "json": ""
+          },
+          "widget": {
+            "type": ""
+          },
+          "reorder": false,
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "customConditional": "",
+          "logic": [],
+          "attributes": {},
+          "row": "0-7"
+        }
+      ],
+      "encrypted": false,
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "groupToggle": false
+    },
+    {
+      "mask": false,
+      "tableView": true,
+      "alwaysEnabled": false,
+      "numRows": 1,
+      "numCols": 6,
+      "type": "table",
+      "input": false,
+      "key": "table4",
+      "label": "",
+      "conditional": {
+        "show": "",
+        "when": "",
+        "json": ""
+      },
+      "rows": [
+        [
+          {
+            "components": [
+              {
+                "label": "HTML",
+                "tag": "b",
+                "className": "",
+                "attrs": [
+                  {
+                    "attr": "",
+                    "value": ""
+                  }
+                ],
+                "content": "Sum",
+                "refreshOnChange": false,
+                "mask": false,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "htmlelement",
+                "input": false,
+                "key": "html13",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "reorder": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {}
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Unfranked",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumBaseRateEntitiesUnfranked",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "tags": [],
+                "calculateValue": "value = _.sumBy(data.dividendsReceivedBaseRateEntities,function(x){\n  return x.unfranked;\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Franked",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumBaseRateEntitiesFranked",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": false,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "tags": [],
+                "calculateValue": "value = _.sumBy(data.dividendsReceivedBaseRateEntities,function(x){\n  return x.franked;\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "TFN Withholding",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumBaseRateEntitiesTfnWithholding",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "tags": [],
+                "calculateValue": "value = _.sumBy(data.dividendsReceivedBaseRateEntities,function(x){\n  return x.tfnWithholding;\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "NetAmount",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumBaseRateEntitiesNetAmount",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "tags": [],
+                "calculateValue": "value = _.sumBy(data.dividendsReceivedBaseRateEntities,function(x){\n  return x.netAmount;\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "decimalLimit": 2,
+                "reorder": false
+              }
+            ]
+          },
+          {
+            "components": [
+              {
+                "label": "Franking Credit",
+                "mask": false,
+                "disabled": true,
+                "tableView": true,
+                "alwaysEnabled": false,
+                "type": "number",
+                "input": true,
+                "key": "sumNonBaseRateEntitiesFrankingCredit",
+                "validate": {
+                  "customMessage": "",
+                  "json": ""
+                },
+                "conditional": {
+                  "show": "",
+                  "when": "",
+                  "json": ""
+                },
+                "delimiter": true,
+                "requireDecimal": false,
+                "encrypted": false,
+                "properties": {},
+                "customConditional": "",
+                "logic": [],
+                "attributes": {},
+                "decimalLimit": 2,
+                "calculateValue": "value = _.sumBy(data.dividendsReceivedBaseRateEntities,function(x){\n  return x.frankingCredit;\n});",
+                "defaultValue": 0,
+                "refreshOn": "data",
+                "reorder": false
+              }
+            ]
+          }
+        ]
+      ],
+      "header": [],
+      "properties": {},
+      "customConditional": "",
+      "logic": [],
+      "attributes": {},
+      "reorder": false
+    },
+    {
+      "type": "button",
+      "label": "Submit",
+      "key": "submit",
+      "disableOnInvalid": true,
+      "theme": "primary",
+      "input": true,
+      "tableView": true
+    }
+  ],
+  "_id": "5de887ce0a91d4a018e01780",
+  "type": "form",
+  "display": "form",
+  "title": "C4 Dividend Received Worksheet",
+  "name": "C4 Dividend Received Worksheet",
+  "path": "C4 Dividend Received Worksheet"
+}
